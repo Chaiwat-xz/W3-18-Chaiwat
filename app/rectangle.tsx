@@ -58,7 +58,7 @@ export default function Rectangle() {
 
             <View style={styles.box2}>
 
-                <TouchableOpacity onPress={() => router.navigate('/index')} >
+                <TouchableOpacity onPress={() => router.navigate('/')} >
                     <Text style={styles.button2}>
                         Home
                     </Text>

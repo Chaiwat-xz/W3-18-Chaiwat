@@ -38,7 +38,7 @@ return (
                     onChangeText={(p) => setPound(Number(p))}
                 />
 
-                <TouchableOpacity onPress={() => Idtokg()} >
+                <TouchableOpacity onPress={() => Lbtokg()} >
                     <Text style={styles.button1}>
                         Calculate
                     </Text>
@@ -48,7 +48,7 @@ return (
 
             <View style={styles.box2}>
 
-                <TouchableOpacity onPress={() => router.navigate('/index')} >
+                <TouchableOpacity onPress={() => router.navigate('/')} >
                     <Text style={styles.button2}>
                         Home
                     </Text>
