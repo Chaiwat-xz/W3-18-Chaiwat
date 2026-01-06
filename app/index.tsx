@@ -17,7 +17,13 @@ export default function App() {
                         Square area
                     </Text>
                 </TouchableOpacity>
-                
+
+                <TouchableOpacity onPress={() => router.navigate('/pound')} >
+                    <Text style={styles.button}>
+                        Pound
+                    </Text>
+                </TouchableOpacity>
+
             </View>
 
         </View>

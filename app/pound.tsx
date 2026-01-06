@@ -1,54 +1,44 @@
 import { View, Text, Button, StyleSheet, TextInput, TouchableOpacity } from "react-native";
 import { useState } from "react";
 import { useRouter } from "expo-router";
+import { useRoute } from "@react-navigation/native";
 
-export default function Rectangle() {
-    //พท.สี่เหลี่ยม = กว้าง * ยาว
-    //      60  = 6 * 10
-    // Cutput   = Input * Input
+export default function Lbtokg() {
+    //kg = pound * 0.4536
+    //cutput = input * 0.4536
 
-    const [area, setArea] = useState(0) // area = 20 x, setArea(20) /
-    const [width, setWidth] = useState(0)
-    const [length, setLength] = useState(0)
+    const [pound, setPound] = useState(0)
+    const [kilo, setKilo] = useState(0)
 
     const router = useRouter()
 
-    function rectangleCal() {
-        var result = width * length
-        setArea(result)
+    function lbtokg() {
+        var result = pound * 0.4536
+        setPound(result)
     }
 
-    return (
+return (
         <View style={{ flex: 1 }}>
 
             <View style={styles.box1} >
 
-                <Text style={styles.textTitle}>Square</Text>
+                <Text style={styles.textTitle}>Pound</Text>
                 {/*<Button title="Next" />*/}
 
                 <View style={styles.box3}>
-                    <Text>Width = {width} cm</Text>
-                    <Text>Length = {length} cm</Text>
-                    <Text>Square area = {area} cm²</Text>
+                    <Text>Pound = {pound} lb</Text>
+                    <Text>Kilograms = {kilo} kg</Text>
                 </View>
 
                 <TextInput
                     style={styles.textInput}
                     placeholder="width"
                     placeholderTextColor="gray"
-                    value={width.toString()}
-                    onChangeText={(w) => setWidth(Number(w))}
+                    value={pound.toString()}
+                    onChangeText={(p) => setPound(Number(p))}
                 />
 
-                <TextInput
-                    style={styles.textInput}
-                    placeholder="length"
-                    placeholderTextColor="gray"
-                    value={length.toString()}
-                    onChangeText={(l) => setLength(Number(l))}
-                />
-
-                <TouchableOpacity onPress={() => rectangleCal()} >
+                <TouchableOpacity onPress={() => Idtokg()} >
                     <Text style={styles.button1}>
                         Calculate
                     </Text>
@@ -64,9 +54,9 @@ export default function Rectangle() {
                     </Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => router.navigate('/pound')} >
+                <TouchableOpacity onPress={() => router.navigate('/rectangle')} >
                     <Text style={styles.button2}>
-                        Pound
+                        Square area
                     </Text>
                 </TouchableOpacity>
 
@@ -89,21 +79,20 @@ const styles = StyleSheet.create({
     },
     box2: {
         flex: 1,
-        justifyContent:"center",
+        justifyContent: "center",
         alignItems: "center",
         gap: 20,
         margin: 20,
         borderRadius: 8,
         flexDirection:"row"
-       
     },
     box3: {
-        backgroundColor: "white",
-        justifyContent: "center",
-        alignItems: "center",
-        gap: 15,
-        padding: 10,
-        borderRadius: 8
+        backgroundColor:"white",
+        justifyContent:"center",
+        alignItems:"center",
+        gap:15,
+        padding:10,
+        borderRadius:8
     },
     textTitle: {
         fontSize: 22,
