@@ -1,11 +1,10 @@
 import { View, Text, Button, StyleSheet, TextInput, TouchableOpacity } from "react-native";
 import { useState } from "react";
 import { useRouter } from "expo-router";
-import { useRoute } from "@react-navigation/native";
 
 export default function Lbtokg() {
     //kg = pound * 0.4536
-    //cutput = input * 0.4536
+    //output = input * 0.4536
 
     const [pound, setPound] = useState(0)
     const [kilo, setKilo] = useState(0)
@@ -14,10 +13,10 @@ export default function Lbtokg() {
 
     function lbtokg() {
         var result = pound * 0.4536
-        setPound(result)
+        setKilo(result)
     }
 
-return (
+    return (
         <View style={{ flex: 1 }}>
 
             <View style={styles.box1} >
@@ -38,7 +37,7 @@ return (
                     onChangeText={(p) => setPound(Number(p))}
                 />
 
-                <TouchableOpacity onPress={() => Lbtokg()} >
+                <TouchableOpacity onPress={() => lbtokg()} >
                     <Text style={styles.button1}>
                         Calculate
                     </Text>
@@ -84,15 +83,15 @@ const styles = StyleSheet.create({
         gap: 20,
         margin: 20,
         borderRadius: 8,
-        flexDirection:"row"
+        flexDirection: "row"
     },
     box3: {
-        backgroundColor:"white",
-        justifyContent:"center",
-        alignItems:"center",
-        gap:15,
-        padding:10,
-        borderRadius:8
+        backgroundColor: "white",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: 15,
+        padding: 10,
+        borderRadius: 8
     },
     textTitle: {
         fontSize: 22,
@@ -100,11 +99,12 @@ const styles = StyleSheet.create({
         color: "white"
     },
     textInput: {
-        borderWidth: 2,
-        borderColor: "white",
+        borderWidth: 0.5,
+        borderColor: "black",
         width: "80%",
         borderRadius: 20,
-        textAlign: "center"
+        textAlign: "center",
+        backgroundColor: "white"
     },
     button1: {
         fontSize: 15,

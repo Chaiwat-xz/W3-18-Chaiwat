@@ -111,11 +111,12 @@ const styles = StyleSheet.create({
         color: "white"
     },
     textInput: {
-        borderWidth: 2,
-        borderColor: "white",
+        borderWidth: 0.5,
+        borderColor: "black",
         width: "80%",
         borderRadius: 20,
-        textAlign: "center"
+        textAlign: "center",
+        backgroundColor: "white"
     },
     button1: {
         fontSize: 15,
