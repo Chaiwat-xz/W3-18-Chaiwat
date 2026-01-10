@@ -111,8 +111,6 @@ const styles = StyleSheet.create({
         color: "white"
     },
     textInput: {
-        borderWidth: 0.5,
-        borderColor: "black",
         width: "80%",
         borderRadius: 20,
         textAlign: "center",
